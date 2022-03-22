@@ -1,0 +1,54 @@
+{
+  "name": "remote-pad",
+  "version": "0.0.0",
+  "main": "main.js",
+  "scripts": {
+    "dev": "concurrently \"electron .\" \"cross-env BROWSER=none vite\"",
+    "pack": "tsc && vite build",
+    "build": "electron-builder",
+    "test": "vite"
+  },
+  "build": {
+    "productName": "testpad",
+    "appId": "com.bluixe.testpad",
+    "copyright": "public",
+    "files": [
+      "dist/**/*",
+      "package.json",
+      "main.js"
+    ],
+    "directories": {
+      "output": "build"
+    },
+    "win": {
+      "icon": "img/favicon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "img/favicon.ico",
+      "uninstallerIcon": "img/favicon.ico",
+      "installerHeaderIcon": "img/favicon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "tespad"
+    }
+  },
+  "dependencies": {
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "concurrently": "^7.0.0",
+    "cross-env": "^7.0.3",
+    "electron": "^17.1.2",
+    "electron-builder": "^22.14.13",
+    "typescript": "^4.1.2",
+    "vite": "^1.0.0-rc.13",
+    "vite-plugin-react": "^4.0.0"
+  }
+  
+}

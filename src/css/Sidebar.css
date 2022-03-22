@@ -1,0 +1,28 @@
+.side {
+  flex:30%;
+  background-color: #565e6d;
+  /* justify-content: center; */
+  text-align: center;
+  /* min-height: 100vh; */
+  display: flex;
+  /* flex-direction: column; */
+  font-size: calc(10px + 2.5vmin);
+  color: rgba(255, 255, 255, 0.8);
+}
+.menu {
+  width:100%;
+}
+.menu .menuitemfalse {
+  width: 100%;
+  padding: 5vh 0;
+  cursor:default;
+}
+.menu .menuitemtrue {
+  width: 100%;
+  padding: 5vh 0;
+  cursor:default;
+  background-color: #353942;
+}
+.menu .menuitem:hover {
+  background-color: #353942;
+}

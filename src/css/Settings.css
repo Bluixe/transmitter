@@ -1,0 +1,14 @@
+.settings .item {
+    margin: 10px;
+}
+.settings .key {
+    font-weight:500;
+    cursor: default;
+}
+.settings .value {
+    color:dimgrey;
+    font-size: 15px;
+}
+.settings input {
+    width: 90%;
+}
