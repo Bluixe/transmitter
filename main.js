@@ -14,6 +14,7 @@ class AppWindow extends BrowserWindow {
       show: false,
       backgroundColor: '#efefef',
     };
+    
     const finalConfig = { ...basicConfig, ...config };
     super(finalConfig);
     // this.loadFile(urlLocation);
@@ -21,6 +22,8 @@ class AppWindow extends BrowserWindow {
     this.once('ready-to-show', () => {
       this.show();
     });
+    require('@electron/remote/main').initialize()
+    require('@electron/remote/main').enable(this.webContents)
   }
 }
 // Menu.setApplicationMenu(null)
@@ -32,6 +35,12 @@ app.on('ready', () => {
     minHeight: 400,
     title: "Remote-pad",
     icon: "img/favicon.ico",
+    webPreferences: {
+      contextIsolation: false,
+      nodeIntegration: true,
+      enableRemoteModule: true,
+      nodeIntegrationInWorker: true,
+    },
     // frame: false
   };
   // const urlLocation = 'http://localhost:3000';

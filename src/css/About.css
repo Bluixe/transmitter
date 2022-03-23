@@ -1,0 +1,13 @@
+.about{
+    position: relative;
+    top:20vh;
+    text-align: center;
+}
+.about .title {
+    font-size: 25px;
+    line-height: 50px;
+}
+.about .author {
+    line-height: 30px;
+    font-style: italic;
+}
