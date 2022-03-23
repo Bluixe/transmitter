@@ -1,5 +1,5 @@
 import React, { isValidElement, useRef, useState } from "react";
-import { store } from "./utils";
+import { store, upload } from "./utils";
 import "./css/Image.css"
 export function Image(){
   const repo = store("repo", "")
@@ -8,34 +8,10 @@ export function Image(){
   const url = `https://api.github.com/repos/${repo}/contents/`
   const fileElemRef = useRef<HTMLInputElement>(null)
   // const clipBoard = navigator.clipboard
-  async function upLoad(url: RequestInfo, value: string) {
+  async function uploadImage(url: RequestInfo, value: string) {
     const currentTime = new Date().valueOf()
     url = `${url}${currentTime}.jpg`
-    const response = await fetch(url,{
-      method: 'PUT',
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer " + store("token", "")
-      },
-      body: JSON.stringify({
-        message: "my commit",
-        content: value
-      }),
-      mode: 'cors'
-    })
-    const result = await (async res => {
-      if (res.status >= 200 && res.status < 400) {
-        return {
-          status: res.status,
-          data: await res.json()
-        }
-      } else {
-        return {
-          status: res.status,
-          data: null
-        }
-      }
-    })(response).catch(e => e)
+    const result = await upload(url, value, "")
     if (result.status === 422) {
       alert("File already exists!")
       return
@@ -55,7 +31,7 @@ export function Image(){
     reader.onload = function () {
       const resString = this.result as string //类型转换
       if(this.result)
-        upLoad(url, resString.split(',')[1])
+        uploadImage(url, resString.split(',')[1])
     }
     reader.onerror = function () {
       new Notification("Fail to read the file")
@@ -73,7 +49,6 @@ export function Image(){
   }
   function onDrop(event:React.DragEvent) {
     setDrag(0);
-    // 阻止默认事件和冒泡
     event.preventDefault();
     event.stopPropagation();
     let file = event.dataTransfer.files[0]

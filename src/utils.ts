@@ -11,41 +11,53 @@ export function store(namespace:string, data:string) {
 	return (store && JSON.parse(store)) || [];
 }
 
-export async function upLoad(url: RequestInfo) {
-    const response = await fetch(url,{
-      method: 'PUT',
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer " + store("token", "")
-      },
-      body: JSON.stringify({
-        message: "my commit",
-        content: "aGVsbG8sd29ybGQ="
-      }),
-      mode: 'cors'
-    })
-    const result = await (async res => {
-      if (res.status >= 200 && res.status < 400) {
-        return {
-          status: res.status,
-          data: await res.json()
-        }
-      } else {
-        return {
-          status: res.status,
-          data: null
-        }
+export async function upload(url: RequestInfo, value: string, sha: string) {
+  const response = await fetch(url,{
+    method: 'PUT',
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer " + store("token", "")
+    },
+    body: JSON.stringify({
+      message: "my commit",
+      content: value,
+      sha: sha
+    }),
+    mode: 'cors'
+  })
+  return (async res => {
+    if (res.status >= 200 && res.status < 400) {
+      return {
+        status: res.status,
+        data: await res.json()
       }
-    })(response).catch(e => e)
-    if (result.status === 422) {
-      alert("File already exists!")
-      return
+    } else {
+      return {
+        status: res.status,
+        data: null
+      }
     }
-    if (result.data) {
-      console.log("success")
-      return
+  })(response).catch(e => e)
+}
+export async function download (url: RequestInfo) {
+  const response = await fetch(url,{
+    method: 'GET',
+    mode: 'cors'
+  })
+  return (async res => {
+    if (res.status >= 200 && res.status < 400) {
+      return {
+        status: res.status,
+        data: await res.json()
+      }
+    } else {
+      return {
+        status: res.status,
+        data: null
+      }
     }
-  }
+  })(response).catch(e => e)
+}
 
 export async function getFetch(url: RequestInfo) {
     const response = await fetch(url,{

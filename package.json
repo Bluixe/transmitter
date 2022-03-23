@@ -1,6 +1,6 @@
 {
   "name": "remote-pad",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "main": "main.js",
   "scripts": {
     "dev": "concurrently \"electron .\" \"cross-env BROWSER=none vite\"",
@@ -15,7 +15,8 @@
     "files": [
       "dist/**/*",
       "package.json",
-      "main.js"
+      "main.js",
+      "img"
     ],
     "directories": {
       "output": "build"

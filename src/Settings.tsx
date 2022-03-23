@@ -16,7 +16,7 @@ export function Settings() {
 	}
 	const onTokenKeydown = function(event:React.KeyboardEvent<HTMLInputElement>) {
 		if (event.key == 'Enter') {
-			event.preventDefault() //避免默认的ENTER操作被执行
+			event.preventDefault() 
 			const val = tokenText.trim() //去除前后空白字符
 			if (val) {
         store("token", val)
@@ -27,7 +27,7 @@ export function Settings() {
 	}
   const onRepoKeydown = function(event:React.KeyboardEvent<HTMLInputElement>) {
 		if (event.key == 'Enter') {
-			event.preventDefault() //避免默认的ENTER操作被执行
+			event.preventDefault() 
 			const val = repoText.trim() //去除前后空白字符
 			if (val) {
         store("repo", val)
@@ -48,8 +48,8 @@ export function Settings() {
           className="input"
           placeholder="Enter your github token here"
           value={tokenText}
-          onKeyDown={event => onTokenKeydown(event)}
-          onChange={event => onTokenChange(event)}
+          onKeyDown={onTokenKeydown}
+          onChange={onTokenChange}
         />
       </div>
       <div className="item">
@@ -62,8 +62,8 @@ export function Settings() {
           className="input"
           placeholder="Example: xxx/xxx"
           value={repoText}
-          onKeyDown={event => onRepoKeydown(event)}
-          onChange={event => onRepoChange(event)}
+          onKeyDown={onRepoKeydown}
+          onChange={onRepoChange}
         />
       </div>
     </div>

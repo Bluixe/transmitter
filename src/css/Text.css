@@ -1,0 +1,23 @@
+.textitem {
+    transform: translateY(5px);
+    width: 60vw;
+    height: 40vh;
+    resize: none;
+}
+.text .item {
+    margin: 10px;
+}
+.text .key {
+    font-weight:500;
+    cursor: default;
+}
+.text .value {
+    color:dimgrey;
+    font-size: 15px;
+}
+.refreshimg {
+    cursor: pointer;
+    margin: 0 10px;
+    height: 20px;
+    transform: translateY(4px);
+}
