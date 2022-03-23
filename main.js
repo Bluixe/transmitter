@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, Menu } = require('electron');
 
 class AppWindow extends BrowserWindow {
   constructor(config, urlLocation) {
@@ -16,18 +16,23 @@ class AppWindow extends BrowserWindow {
     };
     const finalConfig = { ...basicConfig, ...config };
     super(finalConfig);
-    this.loadFile(urlLocation);
-    // this.loadURL('http://localhost:3000')
+    // this.loadFile(urlLocation);
+    this.loadURL('http://localhost:3000');
     this.once('ready-to-show', () => {
       this.show();
     });
   }
 }
-
+// Menu.setApplicationMenu(null)
 app.on('ready', () => {
   const mainWindowConfig = {
-    width: 1440,
-    height: 768,
+    width: 550,
+    height: 400,
+    minWidth: 550,
+    minHeight: 400,
+    title: "Remote-pad",
+    icon: "img/favicon.ico",
+    // frame: false
   };
   // const urlLocation = 'http://localhost:3000';
   let mainWindow = new AppWindow(mainWindowConfig, 'dist/index.html');

@@ -9,8 +9,8 @@
     "test": "vite"
   },
   "build": {
-    "productName": "testpad",
-    "appId": "com.bluixe.testpad",
+    "productName": "remote-pad",
+    "appId": "com.bluixe.remotepad",
     "copyright": "public",
     "files": [
       "dist/**/*",
