@@ -22,8 +22,8 @@ class AppWindow extends BrowserWindow {
     this.once('ready-to-show', () => {
       this.show();
     });
-    require('@electron/remote/main').initialize()
-    require('@electron/remote/main').enable(this.webContents)
+    // require('@electron/remote/main').initialize()
+    // require('@electron/remote/main').enable(this.webContents)
   }
 }
 // Menu.setApplicationMenu(null)
@@ -33,7 +33,7 @@ app.on('ready', () => {
     height: 400,
     minWidth: 550,
     minHeight: 400,
-    title: "Remote-pad",
+    title: "Transmitter",
     icon: "img/favicon.ico",
     webPreferences: {
       contextIsolation: false,

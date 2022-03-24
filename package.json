@@ -1,6 +1,6 @@
 {
-  "name": "remote-pad",
-  "version": "0.0.2",
+  "name": "transmitter",
+  "version": "0.0.3",
   "main": "main.js",
   "scripts": {
     "dev": "concurrently \"electron .\" \"cross-env BROWSER=none vite\"",
@@ -9,8 +9,8 @@
     "test": "vite"
   },
   "build": {
-    "productName": "remote-pad",
-    "appId": "com.bluixe.remotepad",
+    "productName": "transmitter",
+    "appId": "com.bluixe.transmitter",
     "copyright": "public",
     "files": [
       "dist/**/*",

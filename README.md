@@ -1,4 +1,4 @@
-# Remote-pad
+# Transmitter
 
 ## Introduction
 
@@ -14,14 +14,14 @@
 
 在Github中新建一个repository（或利用既有repository）
 
-打开Remote-pad，在settings中分别将token和repository填入
+打开Transmitter，在settings中分别将token和repository填入
 
 repository格式：{username}/{repository name}
 
 ### dev
 
 ```shell
-cd remote-pad
+cd transmitter
 npm install
 npm run dev
 ```
