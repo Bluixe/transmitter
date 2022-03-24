@@ -32,11 +32,11 @@ npm run dev
 
 ### 图床
 
-目前支持拖拽上传与文件选择
+目前支持拖拽上传与文件选择，上传完成后发送通知并将url写入剪贴板
 
 todo：支持粘贴上传；支持应用内的图片浏览与删除
 
-<img src="https://raw.githubusercontent.com/Bluixe/cloudimg/main/1648058582709.jpg" alt="image-20220324020246553" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/Bluixe/cloudimg/main/QQ%E6%88%AA%E5%9B%BE20220324101901.png" style="zoom:67%;" />
 
 ### 文本传输
 
@@ -46,4 +46,4 @@ todo：支持粘贴上传；支持应用内的图片浏览与删除
 
 在输入框中输入文本并敲击回车以上传
 
-<img src="https://raw.githubusercontent.com/Bluixe/cloudimg/main/1648058732083.jpg" alt="image-20220324020521489" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/Bluixe/cloudimg/main/QQ%E6%88%AA%E5%9B%BE20220324101911.png" style="zoom:67%;" />
