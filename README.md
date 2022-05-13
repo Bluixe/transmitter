@@ -34,7 +34,7 @@ npm run dev
 
 目前支持拖拽上传与文件选择，上传完成后发送通知并将url写入剪贴板
 
-todo：支持粘贴上传；支持应用内的图片浏览与删除
+v0.1.0：支持应用内的图片浏览与删除（菜单栏新增Album选项）
 
 <img src="https://raw.githubusercontent.com/Bluixe/cloudimg/main/QQ%E6%88%AA%E5%9B%BE20220324101901.png" style="zoom:67%;" />
 
