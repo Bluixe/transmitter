@@ -1,6 +1,6 @@
 {
   "name": "transmitter",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "main": "main.js",
   "scripts": {
     "dev": "concurrently \"electron .\" \"cross-env BROWSER=none vite\"",

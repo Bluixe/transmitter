@@ -11,6 +11,11 @@
     gap:10px;
 }
 
+a:link {
+    color: royalblue;
+    text-decoration:none
+}
+
 .image_img {
     height: 70px;
     width: 70px;

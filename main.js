@@ -33,6 +33,8 @@ app.on('ready', () => {
     height: 400,
     minWidth: 550,
     minHeight: 400,
+    maxWidth:650,
+    maxHeight:500,
     title: "Transmitter",
     icon: "img/favicon.ico",
     webPreferences: {
