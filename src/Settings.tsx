@@ -38,10 +38,10 @@ export function Settings() {
 	}
 	return (
 		<div className="settings">
-      <div className="item">
+      {/* <div className="item">
         <div className="key">Your current token:</div>
         <div className="value">{token}</div>
-      </div>
+      </div> */}
       <div className="item">
         <div className="key">Here to change your token:</div>
         <input

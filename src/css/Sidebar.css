@@ -1,16 +1,23 @@
 .side {
-  flex:27.5%;
+  height: 100%;
   background-color: #565e6d;
   /* justify-content: center; */
   text-align: center;
+  position: fixed;
+  
   /* min-height: 100vh; */
-  display: flex;
+  /* display: flex; */
+  float: left;
+  width: 27.5%;
   /* flex-direction: column; */
   font-size: calc(10px + 2.5vmin);
   color: rgba(255, 255, 255, 0.8);
+  overflow: hidden;
 }
 .menu {
   width:100%;
+  float: left;
+  overflow: hidden;
 }
 .menu .menuitemfalse {
   width: 100%;

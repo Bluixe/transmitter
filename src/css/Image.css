@@ -17,19 +17,20 @@
 
 .image .imagedrag {
   /* padding: 10vh; */
-
+  display: flex;
+  margin: 18vh;
   
-  position: relative;
+  /* position: relative;
   top: 45%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 60%;
-  height: 50%;
+  height: 50%; */
   border: dashed;
   border-color: #282c34;
   border-radius: 5%;
-  text-align: center;
+  justify-content: center;
   line-height: 50vh;
   color:grey
 

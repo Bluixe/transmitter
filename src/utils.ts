@@ -1,3 +1,4 @@
+import { albumModel } from "./albumModel";
 interface Info{
 	url: RequestInfo
 	method: string
@@ -25,6 +26,37 @@ export async function upload(url: RequestInfo, value: string, sha: string) {
     }),
     mode: 'cors'
   })
+  return (async res => {
+    if (res.status >= 200 && res.status < 400) {
+      return {
+        status: res.status,
+        data: await res.json()
+      }
+    } else {
+      return {
+        status: res.status,
+        data: null
+      }
+    }
+  })(response).catch(e => e)
+}
+
+export async function del (url: RequestInfo, sha: string){
+
+  const response = await fetch(url, {
+    method: 'DELETE',
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer " + store("token", "")
+    },
+    body: JSON.stringify({
+      message: "my commit",
+      sha: sha
+    }),
+    mode:"cors"
+  })
+
+
   return (async res => {
     if (res.status >= 200 && res.status < 400) {
       return {

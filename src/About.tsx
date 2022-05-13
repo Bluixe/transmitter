@@ -11,7 +11,7 @@ export function About(){
   }
   return (<div className="about">
       <div className="title">Transmitter</div>
-      <div className="version">v0.0.3</div>
+      <div className="version">v0.1.0</div>
       <div className="author">Bluixe</div>
       <a href="https://github.com/Bluixe/transmitter" 
         ref={githubRef}

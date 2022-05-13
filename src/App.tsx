@@ -5,6 +5,7 @@ import { Settings } from './Settings'
 import { About } from './About'
 import { Sidebar } from './Sidebar'
 import { Text } from './Text'
+import { Album } from './Album'
 
 function App() {
   const [mode, setMode] = useState('Image')
@@ -18,6 +19,9 @@ function App() {
       break
     case 'Text':
       mainPage = <Text />
+      break
+    case 'Album':
+      mainPage = <Album />
       break
     case 'About':
       mainPage = <About />

@@ -24,16 +24,20 @@
   color: white;
 }
 
+::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
+}
+
 .App-main {
+  
   height:100vh;
   display: flex;
   flex-wrap: wrap;
 }
 
-
-
 .main {
-  flex:72.5%;
+  margin-left: 27.5%;
+  flex: 72.5%;
 }
 
 

@@ -1,10 +1,12 @@
 import React, { isValidElement, useRef, useState } from "react";
 import { store, upload } from "./utils";
+import { albumModel } from "./albumModel";
 import "./css/Image.css"
 export function Image(){
   const repo = store("repo", "")
   const {clipboard} = require("electron")
   const [drag, setDrag] = useState(0)
+  const album = new albumModel("images")
   const url = `https://api.github.com/repos/${repo}/contents/`
   const fileElemRef = useRef<HTMLInputElement>(null)
   // const clipBoard = navigator.clipboard
@@ -18,8 +20,10 @@ export function Image(){
     }
     if (result.data) {
       // console.log(result.data)
+      const sha = result.data.content.sha as string
       const img_url = result.data.content.download_url as string
       // console.log(img_url)
+      album.addImage(img_url, sha)
       clipboard.writeText(img_url)
       new Notification("Upload Success", {body: img_url})
       return
@@ -67,7 +71,7 @@ export function Image(){
   function onChoose(){
     fileElemRef.current?.click()
   }
-  const chooser = <label onClick={onChoose}>choose</label>
+  const chooser = <label onClick={onChoose}>&nbsp;choose&nbsp;</label>
   const fileElem = <input
    ref={fileElemRef} 
    type="file" 
